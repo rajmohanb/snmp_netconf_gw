@@ -642,11 +642,6 @@ static int gateway_check_packet(netsnmp_session * session,
 
     // snmp_log(LOG_INFO, "gateway_check_packet callback\n");
 
-    /*
-     * Log the message and/or dump the message.
-     * Optionally cache the network address of the sender.
-     */
-
     if (transport != NULL && transport->f_fmtaddr != NULL) {
         /*
          * Okay I do know how to format this address for logging.  
@@ -679,7 +674,6 @@ int gateway_setup(void) {
 
     gateway_starttime();
 
-    // gateway_callback_transport();
 
     netsnmp_container_init_list();
 
